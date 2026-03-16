@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch and Debug Blazor WASM with Watch",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:5012", // Check launchSettings.json for correct URL/Port
+            "runtimeExecutable": "stable", // or "canary", "beta", "path to chrome/edge executable"
+            "internalConsoleOptions": "neverOpen",
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "Application started. Press Ctrl+C to shut down.",
+                "uriFormat": "http://localhost:5012"
+            },
+            // The preLaunchTask will run 'dotnet watch run'
+            "preLaunchTask": "dotnet watch run"
+        },
+        {
+            "name": "Attach Blazor Debug Proxy",
+            "type": "blazorwasm",
+            "request": "attach",
+            "timeout": 60000,
+            "internalConsoleOptions": "neverOpen",
+            "url": "http://localhost:5012" // Must match the URL in the other config
+        }
+    ],
+    "compound": {
+        "name": "Run & Debug with Hot Reload",
+        "configurations": ["Launch and Debug Blazor WASM with Watch", "Attach Blazor Debug Proxy"]
+    }
+}

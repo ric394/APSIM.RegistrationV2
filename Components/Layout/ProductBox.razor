@@ -1,0 +1,13 @@
+@using APSIM.RegistrationV2.Components.LayoutObjects
+<div class="card product-box" >
+    <img src="@Product.ImageUrl" alt="@Product.Name" class="card-img-top" />
+    <div class="card-body">
+        <h3 class="card-title">@Product.Name</h3>
+        <p class="card-description">@Product.Description</p>
+    </div>
+</div>
+
+@code{
+    [Parameter]
+    public required Product Product { get; set; }
+}

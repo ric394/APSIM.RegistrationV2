@@ -1,0 +1,73 @@
+﻿@using APSIM.RegistrationV2.Components.LayoutObjects
+
+@page "/"
+
+<PageTitle>APSIM Registration</PageTitle>
+
+<div class="licence-row row">
+    <div class="col g-4">
+        <h1 class="text-center">APSIM Registration Portal</h1>
+        <p class="text-center">Not sure which product licence to choose? Start below.</p>
+        <div class="row g-3 mb-4">
+            <div class="product-card col-sm-12 col-md-6 g-3">
+                <div class="card text-center h-100">
+                    <div class="card-body text-center h-100">
+                        <h5 class="card-title">Learning or using APSIM for research purposes?</h5>
+                        <p class="card-text">Click the button below to view the available products and their licensing options.</p>
+                        <NavLink href="general" class="btn btn-success">Register for General Use Licence</NavLink>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card col-sm-12 col-md-6 g-3">
+                <div class="card text-center h-100">
+                    <div class="card-body text-center h-100">
+                        <span class="bi bi-briefcase-fill" aria-hidden="true"></span>
+                        <h5 class="card-title">Are you using APSIM for commercial purposes?</h5>
+                        <p class="card-text">Click the button below to view the available products and their licensing options.</p>
+                        <NavLink href="special" class="btn btn-success">Register for Special Use Licence</NavLink>
+                    </div>
+                </div>                
+            </div>
+        </div>           
+    </div>
+</div>
+
+<div class="product-row row g-3">
+    <div class="col">
+        <h2 class="text-center">Available Products</h2>
+        <p class="text-center">Here you can register to download one of the APSIM products.</p>
+        <div class="product-list row">
+            @foreach (var product in Products)
+            {
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                    <ProductBox Product="product" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@* This is the code section for defining the list of products *@
+@code{
+    List<Product> Products = new List<Product>
+    {
+        new Product
+        {
+            Name = "APSIM Next Generation",
+            Description = "APSIM Next Generation is a complete rewrite of the original APSIM software, designed to be more modular, extensible, and easier to maintain. It is built on modern software development principles and technologies, making it more efficient and user-friendly.",
+            ImageUrl = "/APSIM_Transparent-154x100.png"
+        },
+        new Product
+        {
+            Name = "APSIM Classic (7.10)",
+            Description = "APSIM Classic (7.10) is the original APSIM software, known for its robustness and reliability. It has been widely used in the agricultural research community for many years.",
+            ImageUrl = "/APSIM_Transparent-154x100.png"
+        },
+        new Product
+        {
+            Name = "APSoil",
+            Description = "APSoil is a specialized tool for soil analysis and management, providing detailed insights into soil properties and helping optimize agricultural practices.",
+            ImageUrl = "/APSIM_Transparent-154x100.png"
+        }
+    };
+}

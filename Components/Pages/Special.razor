@@ -1,0 +1,49 @@
+@page "/special"
+
+<PageTitle>Special Use Registration</PageTitle>
+
+<div class="register-row row g-3">
+    <h1 class="text-center">Special Use Registration</h1>
+    @* <h2 class="text-center text-danger">Important Information</h2>
+    <p class="text-center"><em>Please choose a licence pathway below carefully. Incorrect selection may delay your application.</em></p>
+    <span class="text-center">To download APSIM products you first need to register.</span> *@
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-warning text-center" role="alert">
+                <h4 class="alert-heading">Important Information</h4>
+                <p>Please choose a licence pathway below carefully. Incorrect selection may delay your application.</p>
+            </div>
+        </div>
+    </div>
+    <div class="special-use-licence-choice-row row">
+        <div class="col-md-6">
+            <div class="card text-center h-100">
+                <div class="card-body text-center h-100">
+                    <h5 class="card-title">Special Use Licence Type 1</h5>
+                    <p class="card-text">Description of Special Use Licence Type 1. This licence is suitable for users who...</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-center h-100">
+                <div class="card-body text-center h-100">
+                    <h5 class="card-title">Special Use Licence Type 2</h5>
+                    <p class="card-text">Description of Special Use Licence Type 2. This licence is suitable for users who...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="text-center">To start, please provide the required information below.</span>
+    <div class="col-md-6 offset-md-3">
+        <form class="mb-4 justify-content-center">
+            <input type="email" class="form-control me-2 mb-2" placeholder="Email" required />
+            <input type="text" class="form-control me-2 mb-2" placeholder="Organisation Name" required />
+            <select class="form-select me-2 mb-2" aria-label="Special Use Licence Pathway" required>
+                <option value="none" disabled selected>Select Licence Pathway</option>
+                <option value="special-use-type-one">Special Use Licence Type 1</option>
+                <option value="special-use-type-two">Special Use Licence Type 2</option>
+            </select>
+            <button type="submit" class="btn btn-success">Submit Application</button>
+        </form>
+    </div>
+</div>
