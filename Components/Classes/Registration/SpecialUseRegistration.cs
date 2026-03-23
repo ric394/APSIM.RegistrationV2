@@ -44,6 +44,12 @@ public class SpecialUseRegistration: IRegistration
 
     public SpecialUseRegistration(){}
 
+    public LicenceStatus LicenceStatus { get; set; }
+
+    public override string ToString()
+    {
+        return $"Organisation Name: {OrganisationName}\nContact Name: {ContactName}\nContact Email: {ContactEmail}\nOrganisation Address: {OrganisationAddress}\nOrganisation Website: {OrganisationWebsite}\nContact Phone: {ContactPhone}\nLicence Pathway: {LicencePathWay}\nAnnual Turnover: {AnnualTurnover}\nLicence Status: {LicenceStatus}\nApplication Date: {ApplicationDate}";
+    }
 
 }
 

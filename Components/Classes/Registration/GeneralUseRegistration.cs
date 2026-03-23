@@ -15,6 +15,15 @@ public class GeneralUseRegistration: IRegistration
     [Required(ErrorMessage = "Please enter the contact person's name.")]
     public string? ContactName { get; set; }
 
+    public LicenceStatus LicenceStatus { get; set; } = LicenceStatus.None;
+
+    public DateTime ApplicationDate { get; set; } = DateTime.Now;
+
     public GeneralUseRegistration(){}
+
+    public override string ToString()
+    {
+        return $"Contact Email: {ContactEmail}\nContact Name: {ContactName}\nLicence Status: {LicenceStatus}\n Application Date: {ApplicationDate}";
+    }
 
 }
