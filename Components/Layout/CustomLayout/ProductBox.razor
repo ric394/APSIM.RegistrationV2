@@ -1,9 +1,11 @@
 @using APSIM.RegistrationV2.Components.LayoutObjects
 
 <div class="card product-box" >
+    <div class="card-header text-center">
+        <h3 class="card-title">@Product.Name</h3>
+    </div>
     <img src="@Product.ImageUrl" alt="@Product.Name" class="card-img-top" />
     <div class="card-body align-items-end">
-        <h3 class="card-title">@Product.Name</h3>
         <p class="card-description">@Product.Description</p>
     </div>
     <div class="card-footer text-center">

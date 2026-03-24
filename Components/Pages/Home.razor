@@ -5,43 +5,17 @@
 
 <PageTitle>APSIM Registration</PageTitle>
 
-@* <div class="licence-row row">
-    <div class="col g-4">
-        <h1 class="text-center">APSIM Registration Portal</h1>
-        <p class="text-center">Not sure which product licence to choose? Start below.</p>
-        <div class="row g-3 mb-4">
-            <div class="product-card col-sm-12 col-md-6 g-3">
-                <div class="card text-center h-100">
-                    <div class="card-body text-center h-100">
-                        <h5 class="card-title">Learning or using APSIM for research purposes?</h5>
-                        <p class="card-text">Click the button below to view the available products and their licensing options.</p>
-                        <NavLink href="general" class="btn btn-success">Register for General Use Licence</NavLink>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card col-sm-12 col-md-6 g-3">
-                <div class="card text-center h-100">
-                    <div class="card-body text-center h-100">
-                        <span class="bi bi-briefcase-fill" aria-hidden="true"></span>
-                        <h5 class="card-title">Are you using APSIM for commercial purposes?</h5>
-                        <p class="card-text">Click the button below to view the available products and their licensing options.</p>
-                        <NavLink href="special" class="btn btn-success">Register for Special Use Licence</NavLink>
-                    </div>
-                </div>                
-            </div>
-        </div>           
-    </div>
-</div> *@
-
 <div class="product-row row g-3">
     <div class="col">
-        <h2 class="text-center">Available Products</h2>
+        <h2 class="text-center">Register and Download</h2>
         <p class="text-center">Register here to download APSIM products.</p>
         <div class="product-list row">
             @foreach (var product in Products)
             {
                 <div class="col-sm-12 col-md-6 col-lg-6 mb-4">
-                    <ProductBox Product="product" />
+                    <a href="@product.Href" class="text-decoration-none text-dark">
+                        <ProductBox Product="product" />
+                    </a>
                 </div>
             }
         </div>
@@ -55,14 +29,14 @@
         new Product
         {
             Name = "APSIM Next Generation",
-            Description = "APSIM Next Generation is a complete rewrite of the original APSIM software, designed to be more modular, extensible, and easier to maintain. It is built on modern software development principles and technologies, making it more efficient and user-friendly.",
+            Description = "APSIM Next Generation is a complete rewrite of the original APSIM software, designed to be more modular, extensible, and easier to maintain. It is built on modern software development principles and technologies, making it more efficient and user-friendly. If you are new to APSIM or looking for the latest features and improvements, we recommend registering for and downloading APSIM Next Generation.",
             ImageUrl = "/APSIM_screenshot.png",
             Href = "register/nextgen"
         },
         new Product
         {
             Name = "APSIM Classic (7.10)",
-            Description = "APSIM Classic (7.10) is the original APSIM software, known for its robustness and reliability. It has been widely used in the agricultural research community for many years.",
+            Description = "APSIM Classic (7.10) is the original APSIM software, known for its robustness and reliability. It has been widely used in the agricultural research community for many years. Please note that from APSIM Classic version 7.10 onwards, the software is no longer being actively developed, and users are encouraged to transition to APSIM Next Generation for the latest features and improvements.",
             ImageUrl = "/APSIM_Classic_screenshot.png",
             Href = "register/classic"
         },
